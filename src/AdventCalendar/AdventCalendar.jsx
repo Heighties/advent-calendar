@@ -15,7 +15,7 @@ const AdventCalendar = () => {
   // Fonction pour choisir une image aléatoire parmi celles dans le dossier 'gift-wrap'
   const getRandomGiftBackground = () => {
     const randomIndex = Math.floor(Math.random() * 7) + 1; // Choisir un nombre entre 1 et 7
-    return `/gift-wrap/bg-${randomIndex}.jpg`; // Retourner le chemin de l'image correspondante
+    return `${process.env.PUBLIC_URL}/gift-wrap/bg-${randomIndex}.jpg`; // Retourner le chemin de l'image correspondante
   };
 
   // Initialisation des données du calendrier
@@ -37,7 +37,7 @@ const AdventCalendar = () => {
         )
       );
     } else {
-      alert("Vous ne pouvez pas ouvrir cette case avant le jour correspondant !");
+      alert('Vous ne pouvez pas ouvrir cette case avant le jour correspondant !');
     }
   };
 
@@ -49,7 +49,7 @@ const AdventCalendar = () => {
     <div
       className="grid grid-cols-4 gap-4 p-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 min-h-screen"
       style={{
-        backgroundImage: 'url(/background/chr-bg2.png)', // Fond de calendrier
+        backgroundImage: `url(${process.env.PUBLIC_URL}/background/chr-bg2.png)`, // Fond de calendrier
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -85,7 +85,7 @@ const AdventCalendar = () => {
             onClick={(e) => e.stopPropagation()} // Empêche la fermeture en cliquant sur la modale
           >
             <img
-              src={`/gifts/gift-${selectedDay}.jpg`}
+              src={`${process.env.PUBLIC_URL}/gifts/gift-${selectedDay}.jpg`}
               alt={`Gift for day ${selectedDay}`}
               className="w-full h-auto rounded"
             />
@@ -103,6 +103,7 @@ const AdventCalendar = () => {
 };
 
 export default AdventCalendar;
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////

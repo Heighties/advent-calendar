@@ -8,7 +8,7 @@ const Home = () => {
     <div
       className="flex flex-col items-center justify-center min-h-screen"
       style={{
-        backgroundImage: 'url(/background/chr-bg1.png)',
+        backgroundImage: `url(${process.env.PUBLIC_URL}/background/chr-bg1.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
