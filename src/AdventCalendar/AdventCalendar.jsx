@@ -37,7 +37,7 @@ const AdventCalendar = () => {
         )
       );
     } else {
-      alert('Vous ne pouvez pas ouvrir cette case avant le jour correspondant !');
+      alert('Tricheuse! Tu dois attendre pour celle là! CDB !!');
     }
   };
 
